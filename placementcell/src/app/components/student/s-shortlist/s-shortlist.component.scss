@@ -1,0 +1,26 @@
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pagination-controls .btn {
+    padding: 10px 20px;
+    font-size: 8px;
+    font-weight: bold;
+  }
+  
+  .pagination-controls .btn:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .page-info {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .btn{
+    background-color: blueviolet;
+  }

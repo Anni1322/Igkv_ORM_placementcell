@@ -1,0 +1,248 @@
+<app-header></app-header>
+<!-- slider -->
+<app-slider></app-slider>
+<!--slider -->
+
+<div style="overflow:auto">
+    <!-- Stats Section -->
+    <section id="stats" class="stats  section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-user-md fa-4x flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" [attr.data-purecounter-end]="StudentCont" data-purecounter-duration="1" class="purecounter"></span>
+                <p style="margin-left: 19px;">Registered Students</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="far fa-hospital fa-4x flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" [attr.data-purecounter-end]="ComapnyCont" data-purecounter-duration="1" class="purecounter"></span>
+                <p style="margin-left: 19px;">Registered Companie's</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-award fa-4x flex-shrink-0" style="margin-left: 9px;"></i>
+              <div>
+                <span data-purecounter-start="0" [attr.data-purecounter-end]="ComapnyCont" data-purecounter-duration="1" class="purecounter"></span>
+                <p style="margin-left: 19px;">Placed Student's</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- /Stats Section -->
+        <!-- Faq Section -->
+        <section id="faq" class="faq section" >
+          <!-- Section Title -->
+          <div class="container card section-title" data-aos="fade-up">
+            <div class="col-lg-12">
+              <div class="faq-container" style="margin-top: -80px;">
+                <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200" style="height: 7px; background-color: #8a2be2; border-radius: 10px;">
+                  <i style="margin-top: -11px;" class="faq-icon bi bi-bell"></i>
+                  <h3 style="margin-top: -11px;">Notification</h3>
+                  <div  class="faq-content">
+                    <!-- <p>jobs available's.</p> -->
+                  </div>
+                </div>
+                <!-- End Faq item-->
+                <marquee class="notification_body " behavior="scroll" direction="up" scrollamount="3" scrolldelay="15" onmouseover="this.stop();" onmouseout="this.start();" style="height: 200px;  overflow: hidden;">
+                  <div class="faq-item " data-aos="fade-up" data-aos-delay="300" *ngFor="let vacancy of data" style="height: 7px; margin-top: -11px;">
+                    <i class="faq -icon bi bi-info-circle fa-1x"></i>
+                    <!-- <img src="https://img.icons8.com/?size=100&id=mIQ6moZZHoBs&format=png&color=000000" width="20px" alt="" srcset="">   -->
+                    <!-- Post:  -->
+                    Post : {{ vacancy.Job_Title }}
+                    Last Date : {{ vacancy.Last_Date_for_apply | date }} 
+                    <span class="card-subtitle text-muted" hidden>VID: {{ vacancy.Vacancy_ID }} </span>
+                    <a class="card-subtitle text-muted"> {{ vacancy.Job_title }} </a>
+                    <a [routerLink]="['/login']" class="card-link"> Apply Now  </a> 
+                    <a [href]="baseimageur + vacancy.Notice_Url" target="_blank" class="card-link text-black">
+                      <i class="bi bi-file-pdf"></i>
+                    </a>
+                    <!-- <a [routerLink]="['/notification']" class="card-link"> More</a> -->
+                    <!-- <h3>Post : {{ vacancy.Job_Title }}</h3> -->
+                    <!-- <i [routerLink]="['/notification']" class=" faq-toggle bi bi-chevron-right"><a [routerLink]="['/notification']" class="card-link"> More</a></i> -->
+                    <a [routerLink]="['/notification']" class="card-link"> More</a>
+                    
+                  </div><!-- End Faq item-->
+                </marquee>
+              </div>
+            </div>
+          </div>
+          <!-- End Section Title -->
+        </section>
+        <!-- /Faq Section -->
+
+        <!-- student -->
+        <section id="faq" class="faq section" >
+          <!-- Section Title -->
+          <div class="container card section-title" style="background-color: #e3bdff;" data-aos="fade-up">
+            <div class="col-lg-12">
+              <div class="faq-container" style="margin-top: -80px;">
+              </div>
+              <div class="container transparent card section-title" data-aos="fade-up">
+                <span>Top Student's<br></span>
+                <h2>Top Student's</h2>
+                <p style="margin: 20px;">At Indira Gandhi Krishi Vishwavidyalaya (IGKV), we take immense pride in the accomplishments of our students. Here are the top 5 students who have secured prestigious placements, showcasing their exceptional talent and dedication. Congratulations to them!</p>
+              </div>
+              <!-- End Section Title -->
+    
+              <div class="container">
+                <!-- topstudent card -->
+                <div class="row d-flex justify-content-center">
+             
+                  
+                
+                    <div class="cardd">
+                      <div class="card-body px-4 py-5">
+                        <!-- Carousel wrapper -->
+                        <div id="carouselDarkVariant" data-mdb-carousel-init class="carousel slide carousel-dark" data-mdb-ride="carousel">
+                          <!-- Indicators -->
+                          <div class="carousel-indicators mb-0">
+                            <button
+                              *ngFor="let student of top5Students; let i = index"
+                              data-mdb-button-init
+                              [attr.data-mdb-target]="'#carouselDarkVariant'"
+                              [attr.data-mdb-slide-to]="i"
+                              [class.active]="i === 0"
+                              [attr.aria-current]="i === 0 ? 'true' : null"
+                              [attr.aria-label]="'Slide ' + (i + 1)"
+                            ></button>
+                          </div>
+                
+                          <!-- Inner -->
+                          <div class="carousel-inner ">
+                            <div
+                              *ngFor="let student of top5Students; let i = index"
+                              class="carousel-item"
+                              [class.active]="i === 0"
+                            >
+                              <div class="row d-flex justify-content-center studdentscard">
+                                <div class="col-lg-10 ">
+                                  <div class="row">
+                                    <!-- Image Section -->
+                                    <div class="col-lg-4 d-flex justify-content-center studdentscard">
+                                      <img
+                                        [src]="student.profilephoto_Url ? baseimageur + student.profilephoto_Url : 'https://statinfer.com/wp-content/uploads/dummy-user.png'"
+                                        class="rounded-circle shadow-1 mb-4 mb-lg-0"
+                                        alt="{{ student.Student_First_Name_E || 'User' }} Avatar"
+                                        width="100"
+                                        height="100"
+                                      />
+                                    </div>
+                                    <!-- Content Section -->
+                                    <div class="col-9 col-md-9 col-lg-7 text-center text-lg-start">
+                                      <h4 class="mb-4">{{ student.Student_First_Name_E || 'Unknown' }} - {{ student.Job_Title || 'No Title' }}</h4>
+                                      <p class="mb-0 pb-3">
+                                        {{ student.Email_Id || 'No testimonial available.' }}
+                                      </p>
+                                      <p class="card-text text-muted">
+                                        Other details
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Inner -->
+                
+                          <!-- Controls -->
+                          <button
+                            data-mdb-button-init
+                            class="carousel-control-prev"
+                            type="button"
+                            data-mdb-target="#carouselDarkVariant"
+                            data-mdb-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button
+                            data-mdb-button-init
+                            class="carousel-control-next"
+                            type="button"
+                            data-mdb-target="#carouselDarkVariant"
+                            data-mdb-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
+                        </div>
+                        <!-- Carousel wrapper -->
+                      </div>
+                    </div>
+                    <div class="text-center mt-4 pt-2">
+                      <i class="fas fa-quote-right fa-3x text-white"></i>
+                    </div>
+                </div>
+                <!-- topstudent  card-->
+            </div>
+            </div>
+          </div>
+        </section>
+        
+<!-- student -->
+<!-- tesimonial -->
+
+<!-- tesimonial -->
+        <!-- topcompany Section -->
+        <section id="faq" class="faq section" style="margin-top: -51px;">
+          <!-- Section Title -->
+          <div class="container card section-title" style="background-color: #e3bdff;" data-aos="fade-up">
+            <div class="col-lg-12">
+          <!-- Section Title -->
+          <div class="container card section-title" data-aos="fade-up" style="margin-top: -70px;">
+            <span>Top Compani's<br></span>
+            <h2>Top Company's</h2>
+            <p style="margin: 20px;">Indira Gandhi Krishi Vishwavidyalaya (IGKV) is proud to partner with leading companies and organizations in the agricultural and allied sectors. These top companies actively participate in our placement programs, offering valuable opportunities to our graduates. Here are some of the most prestigious companies that visit IGKV for placements:</p>
+          </div><!-- End Section Title -->
+          <div class="container">
+            <marquee class="notification_body " behavior="scroll" direction="left" scrollamount="3" scrolldelay="15" onmouseover="this.stop();" onmouseout="this.start();">
+            <div class="row gy-2 ">
+              <div class="d-flex">
+              <div class="col-lg-2 col-md-2" data-aos="fade-up" data-aos-delay="100"  *ngFor="let cmapany of top5company">
+                <div class="cardimg">
+                  <div class="card-img">
+                    <!-- <img src="assets/img/service-1.jpg" alt="" class="img-fluid"> -->
+                    <img class="fixed-size-image" [src]="baseimageur + cmapany.Company_Logo_Url  || 'https://statinfer.com/wp-content/uploads/dummy-user.png'" alt="Company Logo" class="img-fluid">
+                  </div>
+                  <h3>{{cmapany.Company_Name || 'Unknown'}}</h3>
+                  <!-- <p class="stat">{{cmapany.Contact_Person || 'Unknown'}}</p>
+                  <p class="stat">{{cmapany.Hr_Contact_No || 'Unknown'}}</p> -->
+                  <p>{{cmapany.Contact_Person || 'Unknown'}}</p>
+                </div>
+              </div><!-- End Card Item -->
+              </div>
+            </div>
+            </marquee>
+          </div>
+          </div>
+          </div>
+        </section>
+        <!-- /topcompany Section -->
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

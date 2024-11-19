@@ -1,0 +1,173 @@
+<div class=" mt-3" style="margin: 20px;">
+    <!-- <h2>Welcome to Your Dashboard</h2> -->
+
+
+
+            <!-- Faq Section -->
+            <section id="faq" class="faq section" >
+
+                <!-- Section Title -->
+                <div class="container card section-title" data-aos="fade-up">
+                  <div class="col-lg-12">
+                    <div class="faq-container" style="margin-top: -23px;">
+                      <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200" style="height: 7px; background-color: #8a2be2; border-radius: 10px;">
+                        <i style="margin-top: -11px;" class="faq-icon bi bi-bell"></i>
+                        <h3 style="margin-top: -11px;">Notification</h3>
+                        <div  class="faq-content">
+                          <!-- <p>jobs available's.</p> -->
+                        </div>
+                      </div>
+                      <!-- End Faq item-->
+                  
+ 
+                      <marquee class="notification_body " behavior="scroll" direction="up" scrollamount="3" scrolldelay="15" onmouseover="this.stop();" onmouseout="this.start();" style="height: 200px;  overflow: hidden;">
+                        <div class="faq-item " data-aos="fade-up" data-aos-delay="300" *ngFor="let vacancy of data" style="height: 7px; margin-top: -11px;">
+                          <i class="faq -icon bi bi-info-circle fa-1x"></i>
+                          
+                          <!-- <img src="https://img.icons8.com/?size=100&id=mIQ6moZZHoBs&format=png&color=000000" width="20px" alt="" srcset="">   -->
+                          <!-- Post:  -->
+                          Post : {{ vacancy.Job_Title }}
+                          Last Date : {{ vacancy.Last_Date_for_apply | date }} 
+                          <span class="card-subtitle text-muted" hidden>VID: {{ vacancy.Vacancy_ID }} </span>
+                          <a class="card-subtitle text-muted"> {{ vacancy.Job_title }} </a>
+                          <a [routerLink]="['/student/s-vacancy-apply', vacancy.Vacancy_ID]" class="card-link"> Apply Now</a> 
+                          
+                          <a [href]="baseimageur + vacancy.Notice_Url" target="_blank" class="card-link text-black">
+                            <i class="bi bi-file-pdf"></i>
+                          </a>
+                          
+                          <a [routerLink]="['/student/s-vacany-details']" class="card-link"> More</a>
+                         
+                        </div><!-- End Faq item-->
+                      </marquee>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+                <!-- End Section Title -->
+              </section>
+              <!-- /Faq Section -->
+      
+
+
+      
+
+    <div class="row mt-2">
+        <!-- <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Selected</h4>
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="btn btn-primary">Click</a>
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-success text-white bg-opacity-25">
+                <div class="card-body">
+                    <h4 class="card-title">Interview date</h4>
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="btn btn-primary">Click</a>
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-primary text-white bg-opacity-25">
+                <div class="card-body">
+                    <h4 class="card-title">Joining</h4>
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="btn btn-warning ">Click</a>
+                  </div>
+            </div>
+        </div>
+   
+        <div class="col-md-4 mb-3">
+            <div class="card bg-warning text-white bg-opacity-25">
+                <div class="card-body">
+                    <h4 class="card-title">Rejected</h4>
+                    <p class="card-text">Some example text.</p>
+                    <a href="#" class="btn btn-warning">Click</a>
+                  </div>
+            </div>
+        </div> -->
+
+        <div class="col-md-4 mb-4">
+          <div class="shadow card1 " >
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div>
+                  <h4 class="card-title" style="color: #0b0045;">Vacancies:</h4>
+                  <!-- <p class="card-text">Some example text.</p> -->
+                  <!-- <a href="#" class="btn btn-warning">View</a> -->
+                  <a [routerLink]="'/student/s-vacany-details'" class="btn bg-white">Total : {{ getVacancyCount() }}</a>
+              </div>
+             
+              <a [routerLink]="'/student/s-vacany-details'" class="btn" style="background-color: #be2edd;">
+                  <i class="fas fa-briefcase fa-2x" style="color: #ffffff;"></i>
+              </a>
+          </div>
+          </div>
+      </div>
+
+        <div class="col-md-4 mb-4">
+        
+            <div class="shadow card1 " >
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <div>
+                    <h4 class="card-title" style="color: #0b0045;">My Application:</h4>
+                    <!-- <p class="card-text">Some example text.</p> -->
+                    <!-- <a href="#" class="btn btn-warning">View</a> -->
+                    <a [routerLink]="'/student/s-status/' + user.eid" class="btn bg-white">Total : {{applicationcout}}</a>
+                </div>
+               
+                <a [routerLink]="'/student/s-status/' + user.eid" class="btn" style="background-color: #f9ca24;">
+                  <i class="fas fa-user-graduate fa-2x" style="color: #ffffff;"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+
+        
+
+
+
+       
+
+        <div class="col-md-4 mb-4">
+          <div class="shadow card1 " >
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div>
+                  <h4 class="card-title" style="color: #0b0045;">Short List :</h4>
+                  <!-- <p class="card-text">Some example text.</p> -->
+                  <!-- <a href="#" class="btn btn-warning">View</a> -->
+                  <a [routerLink]="'/student/s-shortlist/' + user.eid" class="btn bg-white mb-2">Total : {{ getVacancyCount() }}</a>
+              </div>
+             
+              <a [routerLink]="'/student/s-shortlist/' + user.eid" class="btn" style="background-color: #e84118;">
+                  <!-- <i class="fas fa-briefcase fa-3x" style="color: #ffb142;"></i> -->
+                  <!-- <i class="fas fa-star fa-3x" style="color: #ffc107;"></i> -->
+                  <i class="fas fa-list fa-2x " style="color: #ffffff;"></i>
+
+
+              </a>
+          </div>
+          </div>
+        </div>
+
+        
+    </div>
+
+
+    
+    
+
+
+
+ 
+   
+        <!-- Add more card columns here -->
+ 
+          
+</div>

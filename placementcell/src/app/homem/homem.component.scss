@@ -1,0 +1,432 @@
+ 
+* {
+  box-sizing: border-box;
+  
+}
+
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.menu a {
+  margin-left: 4px;
+  // background-color: #FFA934;
+  border: 1px solid rgb(168, 167, 167);
+  padding: 3px;
+  margin-top: 4px;
+  display: block;
+  width: 100%;
+  color: black;
+}
+
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+}
+
+  
+
+
+.navbar{
+    // background-color: #1886E5;
+    border: 1.8px solid white;
+    border-radius: 5px;
+    
+ 
+  }
+.navbar li{
+    margin: 2px;
+    // float: right;
+  }
+.navbar li a{
+    color: #fff;
+  }
+.navbar li a:hover{
+      background-color: #ffffff;
+      color: #fff;
+      border: 1px solid white;
+      border-radius: 5px;
+  }
+
+//   span{
+//   // background-color: #FFA934;
+//  }
+
+
+.lastdate {
+  color: red;
+}
+
+
+// for cout
+.stat-item {
+  // background-image: url('/assets/icons/studentcard.png');
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #FFA934;
+  // box-shadow: 0 0 10px #FFA934;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.stat-item h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.stat-item p {
+  margin-bottom: 0;
+  color: #003cff;
+}
+.col-md-3{
+  gap: 10px;
+}
+.stat-item:hover{
+ background-color: #ffffff;
+ color: #ffffff; 
+}
+
+.stat-items:hover{
+ background-color: #225fee;
+ color: #ffffff; 
+}
+
+.stat:hover{
+ background-color: #ffffff;
+ color: #ffffff;
+ border-radius: 7px;
+}
+
+
+
+
+.notification-section {
+  text-align: center;
+}
+
+.stat-item {
+  background-color: #ffffff; /* White background for each item */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for better separation */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+// for cout
+
+
+// notification
+// .notification{
+//   background-color: #82589F;
+// }
+// notification
+
+
+// for testimonilal
+.home-testimonial{background-color: #231834;height: 380px}
+.home-testimonial-bottom{
+  background-color: #f8f8f8;
+  transition: background 0.3s, border 0.3s, 
+  border-radius 0.3s, 
+  box-shadow 0.3s;margin-top: 20px;
+  margin-bottom: 0px;
+  position: relative;
+  height: 130px;top: 190px
+}
+  .home-testimonial h3{color: var(--orange);font-size: 14px;font-weight: 500;text-transform: uppercase}
+  .home-testimonial h2{color: white;font-size: 28px;font-weight: 700}
+  .testimonial-inner{position: relative;top: -174px}
+  .testimonial-pos{position: relative;top: 24px}
+  .testimonial-inner .tour-desc{border-radius: 5px;padding: 40px}
+  .color-grey-3{font-family: "Montserrat", Sans-serif;font-size: 14px;color: #6c83a2}
+  .testimonial-inner img.tm-people{
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;max-width: none
+  }
+    .link-name{font-family: "Montserrat", Sans-serif;font-size: 14px;color: #6c83a2}
+    .link-position{font-family: "Montserrat", Sans-serif;font-size: 12px;color: #6c83a2}
+// for testimonilal
+
+
+section{
+  margin-top: -50px;
+  background-color: #EAEAEA;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for section 
+ 
+.notification-section {
+  text-align: center;
+}
+
+.stat-item {
+  background-color: #ffffff; /* White background for each item */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for better separation */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.image-container {
+  width: 100px; /* Set the desired width */
+  height: 100px; /* Set the desired height */
+  border-radius: 50%; /* Optional: if you want the image container to be circular */
+  overflow: hidden; /* Hide overflow to create circular effect */
+  margin-bottom: 15px;
+}
+
+.cardimg{
+  box-shadow:#e4f1ff;
+  width: 120px;
+  height: 120px;
+}
+
+.fixed-size-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+// for section 
+
+
+ 
+// for logo
+.leader {
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+.logo {
+  display: block;
+  font-size: 18px; /* Adjust size as needed */
+  font-weight: bold;
+  color: #e4f1ff; /* Custom color for the logo text */
+  text-transform: uppercase; /* Uppercase letters for a logo-like effect */
+  margin-bottom: 5px;
+}
+
+.abbreviation {
+  display: block;
+  font-size: 14px; /* Adjust size as needed */
+  font-weight: bold;
+  color: #ffffff; /* Custom color for the abbreviation */
+  text-transform: uppercase; /* Uppercase letters */
+  margin-bottom: 10px;
+}
+
+.position {
+  font-size: 18px; /* Adjust size as needed */
+  color: #333; /* Color for the position/title */
+}
+// for logo
+ 
+
+
+// top student
+ 
+.studenttop {
+  background-color: rgba(138, 43, 226, 0.1); /* 50% transparency */
+}
+/* Marquee styling */
+.marquee.notification_body.studenttop {
+  background-color: rgba(138, 43, 226, 0.5); /* transparent BlueViolet color */
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* Card styling */
+.cardd {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 3px;
+  // width: auto;
+  margin-bottom: 3px;
+  // width: 230px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 860px;
+  height: 200px;
+}
+
+.card-img {
+  // background-color: #007bff;
+  background-color:rgba(180, 43, 226, 0.2); 
+  padding: 4px;
+  border-radius: 50%;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+/* Adding some spacing between cards */
+.row.gy-2 .col-lg-2 {
+  margin-bottom: 15px;
+}
+// top student
+
+
+// 
+.studentcard{
+  width: 860px;
+  height: 400px;
+}
+
+
+
+
+// testimonial
+
+.gradient-custom {
+  background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #d739ff 100%),
+    linear-gradient(121.28deg, #669600 0%, #b91daf 100%),
+    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #2da8ff 07%, #51d500 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+}
+.carousel-indicators {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+
+// testimonial
+
+
+
+
+// slider 
+ 
+// slider 
+// 
+
+
+// font size resposive
+/* Base font sizes using rem for scalability */
+.faq-item {
+  font-size: 1rem; /* Default font size */
+}
+
+.job-title, .last-date, .apply-link, .more-link {
+  font-size: 1.1rem; /* Adjust font size slightly larger for important info */
+}
+
+.faq-item i {
+  font-size: 1rem; /* Adjust icon size */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .faq-item {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .faq-item {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-item {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-item {
+    font-size: 0.6rem;
+  }
+}
+
+// font size resposive
+
+
+
+//
+// 
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main, .right{
+    width: 100%;
+  }
+ .d-flex{
+  display: none;
+ }
+ .col-md-3{
+  margin: 10px;
+  gap: 20px;
+}
+}
+ 

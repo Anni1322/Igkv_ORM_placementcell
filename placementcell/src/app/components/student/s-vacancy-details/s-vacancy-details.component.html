@@ -1,0 +1,51 @@
+<div class="container mt-3">
+  <h1>Vacancy Details</h1>
+
+  <div class="table-responsive border">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Vacancy ID</th>
+          <th>Company ID</th>
+          <th>Company Name</th>
+          <th>Post Name</th>
+          <th>No. of Post</th>
+          <th>Location</th>
+          <th>Salary</th>
+          <th>Type</th>
+          <th>Last Date to Apply</th>
+          <th>Apply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vacancy of paginatedVacancies">
+          <td>{{ vacancy.Vacancy_ID }}</td>
+          <td>{{ vacancy.Company_Id }}</td>
+          <td>{{ vacancy.Company_Name }}</td>
+          <td>{{ vacancy.Job_Title }}</td>
+          <td>{{ vacancy.No_Of_Post }}</td>
+          <td>{{ vacancy.Job_Location }}</td>
+          <td>{{ vacancy.Salary }}</td>
+          <td>{{ vacancy.Job_Selection }}</td>
+          <td>{{ vacancy.Last_Date_for_apply | date }}</td>
+          <td>
+            <a [routerLink]="['/student/s-vacancy-apply', vacancy.Vacancy_ID]" class="" style="background-color: #8a2be2;"> 
+              <i style="margin-top: 5px; color: #ffffff;" class="fas fa-check-circle"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination-controls d-flex justify-content-center align-items-center mt-3">
+    <button class="btn btn-primary mx-2" (click)="previousPage()" [disabled]="currentPage === 1">
+      &laquo; Previous
+    </button>
+    <span class="page-info mx-2">Page {{currentPage}} of {{totalPages}}</span>
+    <button class="btn btn-primary mx-2" (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Next &raquo;
+    </button>
+  </div>
+</div>

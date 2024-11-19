@@ -1,0 +1,55 @@
+<app-header></app-header>
+<section class="forgot-password section light-background">
+    <div class="container" data-aos="fade-up" data-aos-delay="100" style="margin-top: 0px; padding: 0px;">
+      <div class="card mx-auto shadow-lg" style="max-width: 500px;">
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <h1>Forgot Password</h1>
+          </div>
+          <form [formGroup]="forgotPasswordForm" (ngSubmit)="onSubmit()" autocomplete="off" class="container-fluid">
+            <div class="row justify-content-center" style="margin: 13px;">
+              <div class="col-md-10 col-12">
+                <!-- <div class="form-group mb-3">
+                  <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email" required>
+                </div> -->
+              
+                <div class="form-group mb-3">
+                    <input type="text" id="username" formControlName="username" class="form-control" placeholder="Username" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" id="uid" formControlName="UID" class="form-control" placeholder="UID" required>
+                </div>
+
+                <!-- <div class="form-group mb-3">
+                    <input type="password" id="password" formControlName="password" class="form-control" placeholder="Old Password" required>
+                </div> -->
+
+                <div class="form-group mb-3">
+                    <input type="password" id="newpassword" formControlName="newpassword" class="form-control" placeholder="New Password" required>
+                </div>
+
+                       <!-- CAPTCHA Section -->
+                       <div class="mt-1">
+                        <div class="text-center">
+                          <img class="bg-white me-2" [src]="captchaImage" alt="CAPTCHA" width="100" height="30" />
+                          <i (click)="loadCaptcha()" class="fa-solid fa-arrow-rotate-right me-2" style="cursor: pointer;"></i>
+                        </div>
+                        <div class="text-center">
+                          <input id="captcha" formControlName="captcha" type="text" required class="form-control col-md-6 mx-auto mt-2" placeholder="Enter CAPTCHA">
+                        </div>
+                      </div>
+
+              </div>
+            </div>
+            <div class="text-center mt-3">
+              <button type="submit" [disabled]="forgotPasswordForm.invalid" class="btn btn-primary mb-4 m-3">Reset</button>
+              <!-- <button type="submit" [disabled]="forgotPasswordForm.invalid" class="btn btn-primary mb-4 m-3">Send Reset Link</button> -->
+              <button type="button" routerLink="/" class="btn btn-secondary mb-4 m-3">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>

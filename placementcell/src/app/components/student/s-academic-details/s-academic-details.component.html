@@ -1,0 +1,177 @@
+<!--Academic Records mat form-->
+<div class="container-fluid" id="addacademic">
+  <mat-card>
+    <div class="container">
+      <form [formGroup]="academicDetailsForm" (ngSubmit)="onSubmit()" autocomplete="off"> <br>
+        <h2 class="mb-4"><span class="text-primary font-italic me-1"></span><b> Academic Details</b></h2>
+        <br>
+        <fieldset class="scheduler-border">
+
+          <div class="control-group">
+            <div class="row">
+              <!--Student details-->
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="">
+                      Student ID:
+                    </mat-label>
+                    <input matInput type="text" placeholder="student id" formControlName="Student_ID" readonly>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="Registration_No">
+                      Registration No:
+                    </mat-label>
+                    <input matInput type="number" placeholder="Registration No" formControlName="Registration_No">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="Student_Enroll_Id">
+                      Student Enroll:
+                    </mat-label>
+                    <input matInput type="number" placeholder="Student Enroll" formControlName="Student_Enroll_Id">
+                  </mat-form-field>
+                </div>
+              </div>
+              <!--academic details-->
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="Degree_Programme_Type_Id">
+                      Degree Programme Type Id:
+                    </mat-label>
+                    <!--<input matInput placeholder="Degree_Programme_Type_Id" formControlName="Degree_Programme_Type_Id">-->
+                    <mat-select formControlName="Degree_Programme_Type_Id">
+                      <mat-option *ngFor="let c of DegreeType" [value]="c.Degree_Name">
+                        {{c.Degree_Name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="Degree_Programme_Id">
+                      Degree Programme Id:
+                    </mat-label>
+                    <!--<input matInput placeholder="Degree_Programme_Id" formControlName="Degree_Programme_Id">-->
+                    <mat-select formControlName="Degree_Programme_Id">
+                      <mat-option *ngFor="let c of DegreeProgram" [value]="c.Degree_Programme_Type_Id">
+                        {{c.Degree_Program_Name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="College_Name">
+                      College Name:
+                    </mat-label>
+                    <!--<input matInput placeholder="College_Name" formControlName="College_Name">-->
+                    <mat-select formControlName="College_Name">
+                      <mat-option *ngFor="let c of college;" [value]="c.Name">
+                        {{c.Name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="Subject_Id">
+                      Subject:
+                    </mat-label>
+                    <!--<input matInput placeholder="Subject_Id" formControlName="Subject_Id">-->
+                    <mat-select formControlName="Subject_Id">
+                      <mat-option *ngFor="let c of Subject" [value]="c.Subject_Id">
+                        {{c.Subject_Name_E}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="OGPA">
+                      OGPA:
+                    </mat-label>
+                    <input matInput type="number" placeholder="OGPA" formControlName="OGPA">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="Admission_Year_Id">
+                      Admission Session:
+                    </mat-label>
+                    <!--<input matInput placeholder="Admission_Year_Id" formControlName="Admission_Year_Id">-->
+                    <mat-select formControlName="Admission_Year_Id">
+                      <mat-option *ngFor="let c of AdmissionSession" [value]="c.Admission_Session_Name">
+                        {{c.Admission_Session_Name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="inputfieldsize">
+                    <mat-label for="Passingout_Year_Id">
+                      Passingout Year:
+                    </mat-label>
+                    <!--<input matInput placeholder="Passingout_Year_Id" formControlName="Passingout_Year_Id">-->
+                    <mat-select formControlName="Passingout_Year_Id">
+                      <mat-option *ngFor="let c of PassingYear" [value]="c.PassingOut_Year_Id">
+                        {{c.PassingOut_Year_Name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+   
+              <div class="row fileupload">
+                <div class="col" style="margin-top: 5px; margin-bottom: 5px;">
+                  <div>Upload Marksheet</div>
+                  <input type="file" (change)="selectMarksheet($event)" required>
+                  <button class="btn btn-primary mt-2" type="button" (click)="uploadmarksheet()">Upload <i class="fa-solid fa-upload"></i></button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col offset-5">
+              <button mat-raised-button color="primary" [disabled]="academicDetailsForm.invalid" type="submit">
+                Submit
+              </button>
+
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </mat-card>
+</div>
+<br> <br>
+
+
+
+
+
+ 
