@@ -101,10 +101,6 @@ const login = async (req, res) => {
     }
 };
 
-
-
-
-
 // forget 
 const forgetPassword = async (req, res) => {
     const { username, UID, newpassword } = req.body;
@@ -169,6 +165,7 @@ function generateEmpId(empNum) {
     const empId = 'IGKV' + paddedEmpNum;
     return empId;
 }
+
 function generateEmpIdcompay(empNum) {
     // Check if empNum is null or undefined
     if (empNum === null || empNum === undefined) {
@@ -182,7 +179,6 @@ function generateEmpIdcompay(empNum) {
     const empId = 'COM' + paddedEmpNum;
     return empId;
 }
-
 
 const Signup = async (req, res) => {
     try {
@@ -249,11 +245,6 @@ const Signup = async (req, res) => {
     }
 };
 
-
-
-
-
-
 const Profile = async (req, res) => {
     const { eid } = req.body;
     // if (!eid) {
@@ -276,12 +267,6 @@ const Profile = async (req, res) => {
         return res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
-
-
-
-
- 
 
 // api for get update basic detils
 const getbasicdetails = async (req, res) => {
@@ -420,9 +405,7 @@ const postbasicdetails = async (req, res)=>{
             console.error('Error updating student details: ', err);
             res.status(500).json({ error: 'Internal Server Error' });
         }
-    };
-    
-
+};
 
 // post api for apply vacancy
 const VacancyApply = async (req, res) => {
@@ -510,11 +493,6 @@ const VacancyApply = async (req, res) => {
     }
 };
 
-
-
-
-
-
 // for admin api 
 const getVacancyApplyStudentDetails = async(req, res)=>{
     var request = new sql.Request();
@@ -532,8 +510,6 @@ const getVacancyApplyStudentDetails = async(req, res)=>{
     });
 
 }
-
-
 
 // this api retun join data
 const VacancyApplicationStudentDetail = async (req, res) => {
@@ -562,15 +538,7 @@ const VacancyApplicationStudentDetail = async (req, res) => {
     }
 };
 
-
-
-
-
-
-
-
 // const nodemailer = require('nodemailer');
-
 const postAllStudents = async(req, res)=>{
     try{  
         const email = req.body.email;
@@ -607,7 +575,6 @@ const postAllStudents = async(req, res)=>{
      }
 }
 
-
 // for adnroid
 const getStudents = async(req, res)=>{
     var request = new sql.Request();
@@ -624,9 +591,6 @@ const getStudents = async(req, res)=>{
         res.json(records.recordset);
     });
 }
-
-
-
 
 const getAllStudents = async(req, res)=>{
     var request = new sql.Request();
@@ -645,8 +609,6 @@ const getAllStudents = async(req, res)=>{
       res.json({ data: records.recordset, totalCount });
     });
 }
-
-
 
 const registerStudent = async (req, res) => {
     try {
@@ -851,15 +813,6 @@ const registerStudent = async (req, res) => {
     }
 };
 
-
-
-
-
-
-
-
-
-
 // this api retun join data
 const getstudentdetails = async (req, res) => {
     const eid = req.body.eid; // Assuming 'eid' is a field in the request body
@@ -887,9 +840,7 @@ const getstudentdetails = async (req, res) => {
     }
 };
 
- 
-
-// add by anil date on 6-9-2024
+// add  on 6-9-2024
 const getAllApplications = async (req, res) => {
     try {
         // Extract student ID from request parameters
@@ -939,8 +890,7 @@ const getAllApplications = async (req, res) => {
     }
 };
 
-// add by anil date on 6-9-2024 
-
+// add  on 6-9-2024 
 // post api for apply Next Round 
 const NextRoutdDetails = async (req, res) => {
     const {
@@ -1011,8 +961,7 @@ const NextRoutdDetails = async (req, res) => {
     }
 };
 
-
-// add by anil 29-05-2024
+// add on  29-05-2024
 const uploadfile = async (req, res) => {
     const file = req.file;
     const { name, email } = req.body;
@@ -1052,8 +1001,6 @@ const uploadfile = async (req, res) => {
     }
   };
 
-
-// added by roshni
 //  master table api start
 //function to fetched data from gender 
 const getGender = async (req, res) => {
@@ -1076,7 +1023,6 @@ const getGender = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
 
 //function to fetched data from degree_program table
 const getDegree_program = async (req, res) => {
@@ -1138,9 +1084,7 @@ const getSubjects = async(req, res)=>{
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
 // added master api 
-
 
 // function to fetched data from salutation_e table 
 const getSalutation_English = async (req, res) => {
@@ -1162,8 +1106,6 @@ const getSalutation_English = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
-
 
 // function to fetched data from salutation_h table 
 const getSalutation_Hindi = async (req, res) => {
@@ -1232,8 +1174,7 @@ const Admissionyear = async (req, res) => {
     } 
 };
 
-
-//get api //added by roshni 
+//get api  
 //function to fetch data from college table 
 const College = async (req, res) => {
     try {
@@ -1271,9 +1212,7 @@ const PassingOutYear = async (req, res) => {
 };
 
 //  master table api end
-
-//post api/added by roshni 
-
+//post ap 
 const SkillDetails = async (req, res) => {
     const {
       Student_ID,
@@ -1308,8 +1247,7 @@ const SkillDetails = async (req, res) => {
   };
 //skill certificate url can pass the empty value 
  
-
-  const ExperienceDetails = async (req, res) => {
+const ExperienceDetails = async (req, res) => {
     const {
       Student_ID,
       Registration_No,
@@ -1391,9 +1329,7 @@ const SkillDetails = async (req, res) => {
     } 
   };
 
-  
-  
-  const AcademicDetails = async (req, res) => {
+const AcademicDetails = async (req, res) => {
     const {
       Student_ID,
       Registration_No,
@@ -1450,7 +1386,6 @@ const SkillDetails = async (req, res) => {
             @Marksheet_Url,
             @Admission_Year_Id,
             @Passingout_Year_Id
-         
           );
         `);
   
@@ -1465,10 +1400,11 @@ const SkillDetails = async (req, res) => {
       return res.status(500).json({ message: 'Failed to submit academic details', error });
     }
   };
+
  //Degree programme Id can pass the null value  
 
 //function to fetch data from skill details table 
-    const getSkill = async (req, res) => {
+const getSkill = async (req, res) => {
         try {
             const request = new sql.Request();
             const query = 'SELECT * FROM dbo.tnp_student_skills';
@@ -1490,7 +1426,7 @@ const SkillDetails = async (req, res) => {
        } 
     };
 
-    const getSkills = async (req, res) => {
+const getSkills = async (req, res) => {
         const { eid } = req.body;
         if (!eid) {
             return res.status(400).json({ error: 'eid is required' });
@@ -1515,7 +1451,7 @@ const SkillDetails = async (req, res) => {
     
 
 //function to fetch data from experience details table
-    const getExperience = async (req, res) => {
+const getExperience = async (req, res) => {
         try {
             const request = new sql.Request();
             const query = 'SELECT * FROM dbo.tnp_student_experience';
@@ -1537,7 +1473,7 @@ const SkillDetails = async (req, res) => {
         }
     };
 
-    const getExperienceId = async (req, res) => {
+const getExperienceId = async (req, res) => {
         const { eid } = req.body;
     
         if (!eid) {
@@ -1627,8 +1563,6 @@ function getLocalIpAddress() {
 }
 console.log('Local IP Address:', getLocalIpAddress());
 
-
-
 function getPrivateIpAddress() {
     const networkInterfaces = os.networkInterfaces();
     for (const interfaceKey in networkInterfaces) {
@@ -1641,7 +1575,6 @@ function getPrivateIpAddress() {
     }
     return null; // Return null if no private IP found
   }
-  
   // Example usage
   console.log('Private IP Address:', getPrivateIpAddress());
           

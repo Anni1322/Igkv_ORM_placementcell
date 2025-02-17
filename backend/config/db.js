@@ -12,21 +12,6 @@ options: {
 }
 };
 
-
-
-
-//Roshni database
-//    var config = {
-//        user: "igkv",
-//        database: "placementcell",
-//        server:"DESKTOP-NDU9JS5",
-//        password: "igkv@123",
-//           options: {
-//           trustedConnection: true
-//      }
-//   }; 
-
-
 // Connect to the database
 sql.connect(config, function(err) {
     if (err) console.log(err);

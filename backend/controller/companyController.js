@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const sql = require('../config/db');
 const { getGender, getSalutation_English, getSalutation_Hindi } = require('./studentController');
 
-// roshni add on 
 // Function to generate a unique Vacancy ID based on an employee number or similar identifier
 function generatevid(empNum, Company_Id) {
     if (empNum === null || empNum === undefined) {
@@ -96,14 +95,12 @@ const addVacancy = async (req, res) => {
         res.status(500).send({ message: 'Error processing vacancy', error: err.message });
     }
 };
-// roshni add on 
+ 
 
 //this post api for vacancy details can not work properly show the error message 
-
 // get data for update vacancy deails
 const Updatejobdataget = async (req, res) => {
     const { Vacancy_ID } = req.body;
-
     // vid = 10
     // if (!eid) {
     //     return res.status(400).json({ error: 'eid is required' });
@@ -124,8 +121,6 @@ const Updatejobdataget = async (req, res) => {
         return res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
-
 
 
 const getdata_All_Company_id = async (req, res) => {
@@ -153,7 +148,6 @@ const getdata_All_Company_id = async (req, res) => {
         return res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
 
 // for update vacancy
 const updateJob = async (req, res) => {
@@ -271,10 +265,6 @@ const updateJob = async (req, res) => {
     }
 };
 
-
-
-
-
 // API endpoint to get all vacancies
 const getVacanciesDetils = async (req, res) => {
     try {
@@ -290,13 +280,6 @@ const getVacanciesDetils = async (req, res) => {
         res.status(500).send({ message: 'Error fetching vacancies', error: err.message });
     }
 };
-
-
-
-
-
-
-
 
 
 
@@ -364,7 +347,6 @@ function generateEmpId(empNum) {
     return empId;
 }
 
-
 const Signup = async (req, res) => {
     // Access the request body
     const { username, password } = req.body;
@@ -429,10 +411,6 @@ const Signup = async (req, res) => {
     });
 };
 
-
-
-
-
 const getAllCompany = async (req, res) => {
     var request = new sql.Request();
     var query = "SELECT * FROM dbo.company_registration";
@@ -448,8 +426,6 @@ const getAllCompany = async (req, res) => {
       res.json({ data: records.recordset, totalCount });
     });
   }
-
- 
 
 const registerCompany = async (req, res) => {
     const {
@@ -620,7 +596,6 @@ const registerCompany = async (req, res) => {
     }
 };
 
-
 const getcompanyinformation = async (req, res) => {
     const { cid } = req.body;
     // const cid = "COM07"
@@ -642,8 +617,6 @@ const getcompanyinformation = async (req, res) => {
         return res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
-
 
 const getCompany_category = async (req, res) => {
     try {
@@ -723,8 +696,6 @@ const getdistrict = async (req, res)=> {
     }
 }
 
-
-
 const getblock = async (req, res)=> {
     try {
         const request = new sql.Request();
@@ -743,7 +714,6 @@ const getblock = async (req, res)=> {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
-
 
 // post api for file upload
 const fileupload = async (req, res) => {
@@ -777,7 +747,6 @@ const fileupload = async (req, res) => {
     }
 };
 
-
 const getfiles = async (req, res) => {
     try {
         const pool = await sql.connect();  
@@ -790,8 +759,6 @@ const getfiles = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
-
 
 // for files uploads 
 const postCompanyfiles = async (req, res) => {
@@ -861,7 +828,6 @@ const postCompanyfiles = async (req, res) => {
     }
 };
 
-
 const getCompanyfiles = async (req, res) => {
     const { cid } = req.body;
     console.log(cid);
@@ -883,10 +849,7 @@ const getCompanyfiles = async (req, res) => {
     }
 };
 // for files uploads 
-
-
-
-          
+    
 module.exports ={
     Signup,
     login,

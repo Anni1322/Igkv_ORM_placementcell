@@ -90,11 +90,11 @@ router.post('/AcademicId', studentController.getAcademicId);
 router.get('/college', studentController.College);
 router.get('/passingoutyear', studentController.PassingOutYear);
 
-// add by anil data on 19-07-2023
+// add by on 19-07-2023
 // reason for cout total company
 router.get('/totalstudent', studentController.getAllStudents);
 // reason for cout total company
-// add by anil data on 19-07-2023
+// add by on 19-07-2023
 
 // this api created for next round form data save
 router.post('/NextRoutdDetails',studentController.NextRoutdDetails);
@@ -169,8 +169,6 @@ router.get('/images', (req, res) => {
   });
 });
 
-
-
 // for profile photo
 router.post('/profilephoto', upload.single('profilephoto_Url'), (req, res, next) => {
   const file = req.file;
@@ -180,10 +178,5 @@ router.post('/profilephoto', upload.single('profilephoto_Url'), (req, res, next)
   res.json({ profilephoto_Url: `/uploads/${req.file.filename}` });
 });
 // for profile photo
-
-
-
-
-
 
 module.exports = router;
